@@ -13,6 +13,23 @@ $(document).ready(function() {
     return false;
     }
   });
+
+  $("#blck").on("click", function() {
+    resetGrid();
+    paintBlack();
+  });
+  
+  $("#shd").on("click", function() {
+    resetGrid();
+    paintShadows();
+  });
+  
+  $("#rnb").on("click", function() {
+    paintBlack();
+  });
+
+
+
 });
 
 function createGrid() {
@@ -35,5 +52,33 @@ function createGrid() {
 
 function removeGrid() {
   $("#container").empty();
+  $("#container").unbind();
 }
+
+function resetGrid() {
+  $("#container").find(".unit").css({"background-color": "#f2f2f2",  "opacity": "1"});
+  $("#container").unbind();
+}
+
+function paintBlack() {
+  resetGrid();
+  $("#container").on("mouseenter", ".unit", function() {
+    $(this).css("background-color", "black");
+  });
+}
+
+function paintShadows() {
+  $("#container").find(".unit").css({"background-color": "#000", 
+                                     "opacity": 0.1});
+  $("#container").on("mouseenter", ".unit", function() {
+    var i = +$(this).css("opacity")
+    if (i < 1) {
+      i += 0.1;
+      $(this).css("opacity", i);
+    };
+  });
+}
+
+
+
 
