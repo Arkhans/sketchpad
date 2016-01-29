@@ -44,6 +44,7 @@ function createGrid() {
         var unit = $("<div class='unit'></div>");
         unit.css("width", (960 / dim));
         unit.css("height", (960 / dim));
+        unit.css("background-color", "#f2f2f2");
         column.append(unit);
       }
       $("#container").append(column);
@@ -68,8 +69,7 @@ function paintBlack() {
 }
 
 function paintShadows() {
-  $("#container").find(".unit").css({"background-color": "#000", 
-                                     "opacity": 0.1});
+  $("#container").find(".unit").css({"background-color": "#000", "opacity": 0.1});
   $("#container").on("mouseenter", ".unit", function() {
     var i = +$(this).css("opacity")
     if (i < 1) {
