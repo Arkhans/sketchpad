@@ -66,10 +66,13 @@ html {
 
 .unit {
   background-color: grey;
-  margin: 1px;
+  border: 1px solid white;
 }
 
 .column {
   display: inline-block;
 }
 
+.error {
+  display: none;
+}
