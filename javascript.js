@@ -45,7 +45,12 @@ function createGrid() {
   var dim = $("input[name='grid']").val();
   if (dim > 100) {
     $(".error").show();
+    $(".buttons").hide();
     return false;
+  }
+  if (dim <= 100) {
+    $(".error").hide();
+    $(".buttons").show();
   }
   for (i = 0; i < dim; i++) {
     var column = $("<div class='column'></div>");

@@ -58,10 +58,49 @@ html {
   box-sizing: inherit;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+}
+
 #container {
   width: 100%;
   height: auto;
   text-align: center;
+}
+
+.intro {
+  text-align: center;
+  margin: 15px 5px 20px 5px;
+}
+
+.intro > h2 {
+  padding: 2px;
+  margin: 5px; 
+  font-weight: 700; 
+
+}
+
+.input {
+  margin: 5px;
+}
+
+.intro > p {
+  padding: 2px;
+  margin: 5px;
+  color: #ff1a1a;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.buttons {
+  text-align: center;
+  margin: 5px 5px 10px 5px; 
+  padding: 2px;
 }
 
 .unit {
@@ -75,4 +114,20 @@ html {
 
 .error {
   display: none;
+}
+
+footer {
+  border-top: 2px solid #B9BDC1;
+  margin: 35px 0px 0px 0px;
+  text-align: center;
+  background-color: rgba(36, 39, 41, 0.28);
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+footer > p {
+  color: #334067;
+  font-size: small;
 }

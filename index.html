@@ -8,15 +8,25 @@
 </head>
 <body>
   <header>
-    <input id="txt" type="text" name="grid" value="16">
-    <input id="draw" type="submit" value="Let's Draw">
-    <p class="error">Sorry this would take too long. Please enter a number below 100</p>
-    <button id="blck" type="button">Paint with Black!</button>
-    <button id="shd" type="button">Paint with Shades</button>
-    <button id="rnb" type="button">Rainbow!</button>
-    <button id="rnbshd" type="button">Rainbow Shades!!!</button>
-    <button id="stop" type="button">Stop Painting</button>
+    <section class="intro">
+      <h2>Please enter your desired grid dimensions:</h2>
+      <div class="input">
+        <input id="txt" type="text" name="grid" value="16">
+        <input id="draw" type="submit" value="Generate Grid">
+      </div>
+      <p class="error">Sorry this would take too long. Please enter a number up to 100.</p>
+    </section>
+    <section class="buttons">
+      <button id="blck" type="button">Paint with Black!</button>
+      <button id="shd" type="button">Paint with Shades</button>
+      <button id="rnb" type="button">Rainbow!</button>
+      <button id="rnbshd" type="button">Rainbow Shades!!!</button>
+      <button id="stop" type="button">Stop Painting</button>
+    </section>
   </header>
   <div id="container"></div>
+  <footer>
+    <p>Developed by Greg Kavvadias while following The Odin Project curriculum</p>
+  </footer>
 </body>
 </html>
