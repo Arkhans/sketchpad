@@ -8,9 +8,9 @@ $(document).ready(function() {
 
   $("#txt").keypress(function(e) {
     if (e.which == 13) {
-    removeGrid();
-    createGrid();
-    return false;
+      removeGrid();
+      createGrid();
+      return false;
     }
   });
 
@@ -29,6 +29,14 @@ $(document).ready(function() {
     paintRainbow();
   });
 
+  $("#rnbshd").on("click", function() {
+    resetGrid();
+    paintRainbowShades();
+  });
+
+  $("#stop").on("click", function() {
+    stop();
+  });
 
 
 });
@@ -40,20 +48,24 @@ function createGrid() {
     return false;
   }
   for (i = 0; i < dim; i++) {
-      var column = $("<div class='column'></div>");
-      for (j = 0; j < dim; j++) {
-        var unit = $("<div class='unit'></div>");
-        unit.css("width", (960 / dim));
-        unit.css("height", (960 / dim));
-        unit.css("background-color", "#f2f2f2");
-        column.append(unit);
-      }
-      $("#container").append(column);
+    var column = $("<div class='column'></div>");
+    for (j = 0; j < dim; j++) {
+      var unit = $("<div class='unit'></div>");
+      unit.css("width", (960 / dim));
+      unit.css("height", (960 / dim));
+      unit.css("background-color", "#f2f2f2");
+      column.append(unit);
+    }
+    $("#container").append(column);
   }
 } 
 
 function removeGrid() {
   $("#container").empty();
+  $("#container").unbind();
+}
+
+function stop() {
   $("#container").unbind();
 }
 
@@ -90,6 +102,20 @@ var randomRgb = function () {
 function paintRainbow() {
   $("#container").on("mouseenter", ".unit", function() {
     $(this).css("background-color", randomRgb);
+  });
+}
+
+var randomRgba = function () {
+  var red= Math.floor((Math.random()*256));
+  var green= Math.floor((Math.random()*256));
+  var blue= Math.floor((Math.random()*256));
+  var a= Math.random();
+  return "rgba(" + red + "," + green + "," + blue + "," + a + ")";
+}
+
+function paintRainbowShades() {
+  $("#container").on("mouseenter", ".unit", function() {
+    $(this).css("background-color", randomRgba);
   });
 }
 
