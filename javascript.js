@@ -25,7 +25,8 @@ $(document).ready(function() {
   });
   
   $("#rnb").on("click", function() {
-    paintBlack();
+    resetGrid();
+    paintRainbow();
   });
 
 
@@ -62,7 +63,6 @@ function resetGrid() {
 }
 
 function paintBlack() {
-  resetGrid();
   $("#container").on("mouseenter", ".unit", function() {
     $(this).css("background-color", "black");
   });
@@ -76,6 +76,20 @@ function paintShadows() {
       i += 0.1;
       $(this).css("opacity", i);
     };
+  });
+}
+
+var randomRgb = function () {
+  var red= Math.floor((Math.random()*256));
+  var green= Math.floor((Math.random()*256));
+  var blue= Math.floor((Math.random()*256));
+  return "rgb(" + red + "," + green + "," + blue + ")";
+}
+
+
+function paintRainbow() {
+  $("#container").on("mouseenter", ".unit", function() {
+    $(this).css("background-color", randomRgb);
   });
 }
 
